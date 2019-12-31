@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/Resources/features",
         glue= "com/BriteERP/step_definitions",
         dryRun = false,
-        tags = "@event_scr_manager",
+        tags = "@login_with_credentials_ddt",
         plugin = {"html:target/default-cucumber-reports",
                 "json:target/cucumber.json"}
 )

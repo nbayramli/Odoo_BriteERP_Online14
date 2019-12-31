@@ -1,5 +1,6 @@
 package com.BriteERP.pages;
 
+import com.BriteERP.utilities.BrowserUtils;
 import com.BriteERP.utilities.Driver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -31,5 +32,6 @@ public class LoginPage extends BasePage{
         signinButton.click();
         userNameInput.sendKeys(userName);
         passwordInput.sendKeys(password, Keys.ENTER);
+        BrowserUtils.wait(3);
     }
 }
