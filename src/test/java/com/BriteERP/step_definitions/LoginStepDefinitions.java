@@ -33,4 +33,15 @@ public class LoginStepDefinitions {
         System.out.println("Verifying page subtitle: " + string);
     }
 
+
+    @Then("user enters {string} username and {string} password")
+    public void user_enters_username_and_password(String string, String string2) {
+        System.out.println("Login with " + string + " username and " + string2 + " password." );
+        loginPage.login(string, string2);
+    }
+
+    @Given("user verifies that {string} message is displayed")
+    public void user_verifies_that_message_is_displayed(String string) {
+        System.out.println("Warning message: " + string);
+    }
 }
