@@ -29,3 +29,14 @@ And user verifies that "#Inbox" page subtitle is displayed
       | eventscrmmanager50@info.com | eventscrmmanager |
       | eventscrmmanager51@info.com | eventscrmmanager |
 
+  @negative_test
+  Scenario:Verify that warning massage is displayed when password is not correct
+    Given user is on the login page
+    And user enters "imm45@info.com" username and "wrong" password
+    And user verifies that "Wrong login/password" message is displayed
+
+  @negative_test
+  Scenario:Verify that warning massage is displayed when username is not correct
+    Given user is on the login page
+    And user enters "wrong" username and "inventorymanager" password
+    And user verifies that "Wrong login/password" message is displayed
