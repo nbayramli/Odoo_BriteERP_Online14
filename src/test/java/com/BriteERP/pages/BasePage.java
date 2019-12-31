@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,6 +18,13 @@ public class BasePage {
 
     @FindBy(className = "o_web_ client oe_wait")
     public WebElement loadingMask;
+
+    public void navigateTo(String module){
+        String moduleLocator = "//span[normalize-space()='"+module+"']";
+        WebElement tabElement = Driver.get().findElement(By.xpath(moduleLocator));
+        new Actions(Driver.get()).moveToElement(tabElement).pause(200).doubleClick(tabElement).build().perform();
+
+    }
 
     public String getPageSubTitle() {
         waitUntilLoadingMaskDisappear();
